@@ -1,32 +1,30 @@
 package ru.job4j.condition;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.Assert;
-
 public class DummyBotTest {
-
     @Test
     public void whenGreetBot() {
-        String in = "Hello, Bot";
+        String in = "Привет, Бот.";
         String result = DummyBot.answer(in);
-        String expected = "Hello, Smart Guy";
+        String expected = "Привет, умник.";
         Assert.assertEquals(expected, result);
     }
 
     @Test
     public void whenByeBot() {
-        String in = "Bye";
+        String in = "Пока.";
         String result = DummyBot.answer(in);
-        String expected = "See you soon";
+        String expected = "До скорой встречи.";
         Assert.assertEquals(expected, result);
     }
 
     @Test
     public void whenUnknownBot() {
-        String in = "������� ����� 2 + 2?";
+        String in = "Сколько будет 2 + 2?";
         String result = DummyBot.answer(in);
-        String expected = "It puts me in an impossible position. Ask another question.";
+        String expected = "Это ставит меня в тупик. Задайте другой вопрос.";
         Assert.assertEquals(expected, result);
     }
 }
